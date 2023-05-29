@@ -2,7 +2,6 @@ import pandas as pd
 import argparse
 import re
 import sys
-import os
 
 class Signal:
     def __init__(self, sig_name, bit_src='0', bit_dest='0', parameters={}):
@@ -197,6 +196,7 @@ class VerilogCodeGenerator:
         return verilog_code
 
     def generate_verilog_code(self, module_name):
+        module_name = self.clean_module_name(module_name)
         verilog_code = ""
         verilog_code += f"module {module_name} "
         if self.module_io[module_name]["parameters"]:
@@ -213,6 +213,7 @@ class VerilogCodeGenerator:
         return verilog_code
     
     def generate_dummy_io_verilog_code(self, module_name):
+        module_name = self.clean_module_name(module_name)
         verilog_code = ""
         verilog_code += f"module {module_name} "
         if self.module_io[module_name]["parameters"]:
@@ -234,6 +235,7 @@ class VerilogCodeGenerator:
         return verilog_code
     
     def generate_instance_verilog_code(self, module_name, prefix_string=""):
+        module_name = self.clean_module_name(module_name)
         verilog_code = ""
         parameter_line_len = 0
         if self.module_io[module_name]["inputs"]:
