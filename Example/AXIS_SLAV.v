@@ -1,0 +1,45 @@
+module AXIS_SLAV #(parameter pADDR_WIDTH = 12,
+                   parameter pDATA_WIDTH = 32)
+(
+	input wire ARESET_N,
+	input wire ASCLK,
+	input wire [0:0] USER_PRJ_SEL,
+	input wire [pDATA_WIDTH-1:0] a_ss_tdata,
+	input wire [2:0] a_ss_tid,
+	input wire a_ss_tkeep,
+	input wire a_ss_tlast,
+	input wire [3:0] a_ss_tstrb,
+	input wire a_ss_tvalid,
+	input wire ss_tready,
+	input wire ss_tready,
+	input wire ss_tready,
+	input wire ss_tready
+	output wire a_ss_tready,
+	output wire [pDATA_WIDTH-1:0] ss_tdata,
+	output wire [pDATA_WIDTH-1:0] ss_tdata,
+	output wire [pDATA_WIDTH-1:0] ss_tdata,
+	output wire [pDATA_WIDTH-1:0] ss_tdata,
+	output wire [2:0] ss_tid,
+	output wire [2:0] ss_tid,
+	output wire [2:0] ss_tid,
+	output wire [2:0] ss_tid,
+	output wire ss_tkeep,
+	output wire ss_tkeep,
+	output wire ss_tkeep,
+	output wire ss_tkeep,
+	output wire ss_tlast,
+	output wire ss_tlast,
+	output wire ss_tlast,
+	output wire ss_tlast,
+	output wire [3:0] ss_tstrb,
+	output wire [3:0] ss_tstrb,
+	output wire [3:0] ss_tstrb,
+	output wire [3:0] ss_tstrb,
+	output wire ss_tvalid_0,
+	output wire ss_tvalid_1,
+	output wire ss_tvalid_2,
+	output wire ss_tvalid_3
+);
+
+endmodule //AXIS_SLAV
+
