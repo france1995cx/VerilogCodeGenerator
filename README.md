@@ -27,15 +27,17 @@ The script takes in the following command-line arguments:
 
 -f or --input-file : This is a required argument where you must specify the path to your input Excel file.
 -modi_prefix or --prefix-string : A prefix string for module instance generation.
--om or --module-name : The name of a specific module you want the Verilog code to be generated for.
--oa or --output-all : Use this option if you want to generate Verilog code for all the modules in your input file.
+-m or --module-name : The name of a specific module you want the Verilog code to be generated for.
+-o or --upper-module-file-name : Specify the output file name of upper module; module name is the same as worksheet name in xxx.xls file.
 
 ## Example
 To generate Verilog code for a specific module, you can use the following command:
 python VerilogGenerator.py -f <path_to_your_input_file> -om <module_name>
 
 To generate Verilog code for all modules, use:
-python VerilogGenerator.py -f <path_to_your_input_file> -oa
+python VerilogGenerator.py -f <path_to_your_input_file> -o <output_file_name>
+
+Example xlsx file attached in Example folder
 
 ## Support
 If you have any questions or run into any issues, please create an issue on this GitHub repository.
